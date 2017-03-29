@@ -7,7 +7,7 @@ RSpec.feature "AltFuelService" do
 
     fill_in "q", with: "80203"
     click_on "Locate"
-
-    expect(current_path).to have_content("Search results")
+    save_and_open_page
+    expect(page).to have_content("Search results")
   end
 end
