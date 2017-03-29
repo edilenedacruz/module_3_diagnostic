@@ -6,8 +6,6 @@ class Search
     @connect = Faraday.new("https://api.data.gov/nrel/alt-fuel-stations/v1/")
   end
 
-
-
   def query_results
     parse(connect.get "nearest.json?limit=10&api_key=#{@key}&location=#{@location}&range=6.0&fuel_type=ELEC,LPG")
   end
