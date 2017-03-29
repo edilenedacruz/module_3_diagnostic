@@ -1,3 +1,13 @@
 <h1>Search results</h1>
 
-<%= @connect %>
+<%= @search.query_results[:fuel_stations].map do |station| %>
+  <%= station[:station_name] %>
+  <%= station[:street_address] %>
+  <%= station[:zip] %>
+  <%= station[:state] %>
+  <%= station[:city] %>
+  <%= station[:distance] %>
+  <%= station[:access_days_time] %>
+  <%= station[:fuel_type_code] %>
+  <hr>
+  <% end %>
